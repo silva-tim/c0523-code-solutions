@@ -17,7 +17,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   A boolean data type is returned.
 
 - What does the `+=` "plus-equals" operator do?
-  Adds or concatenates the assignment onto the variable as opposed to reassigning it.
+  Adds or concatenates the assignment onto the variable and reassigns it to the variable.
 
 ## Notes
 
