@@ -27,7 +27,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   By using the Array.splice() method.
 
 - How do you append an element to an array?
-  By using the Array.splice() method.
+  By using the Array.splice() method and the Array.push() method.
 
 - How do you break a string up into an array?
   By using the String.split() method.
