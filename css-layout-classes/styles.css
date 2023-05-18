@@ -1,0 +1,25 @@
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.onethird_column {
+  flex-basis: calc(100% / 3);
+}
+
+.onefourth_column {
+  flex-basis: calc(100% / 4);
+}
+
+.twothirds_column {
+  flex-basis: calc((100% / 3) * 2);
+}

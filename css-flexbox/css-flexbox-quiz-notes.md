@@ -11,10 +11,10 @@ After completing this exercise, you should be able to discuss or answer the foll
   The default wrap is nowrap.
 
 - What axis do the `justify-content` properties work on?
-  It works on the horizontal axis. Start & end reversed if using reversed flex-direction.
+  It works on the main (horizontal) axis. Start & end reversed if using reversed flex-direction.
 
 - What axis do the `align-items` properties work on?
-  It works on the vertical axis. Start & end reversed if using reversed flex-direction.
+  It works on the cross (vertical) axis. Start & end reversed if using reversed flex-direction.
 
 ## Notes
 
