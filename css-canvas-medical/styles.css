@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+  font-family: Avenir, sans-serif;
+  font-size: 16px;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Used to create space at top of page */
+header {
+  padding-top: 0.5rem;
+}
+
+hr {
+  margin: 0;
+  border-top: 1rem;
+}
+
+/* Top row */
+.top {
+  gap: 24rem;
+  align-items: center;
+}
+
+.toplogo {
+  flex-basis: 9rem;
+}
+
+button.gray {
+  color: #a0a0a0;
+  background-color: white;
+  border-style: none;
+  padding: 1.5rem;
+}
+
+button.blue {
+  color: white;
+  background-color: #294464;
+  border-style: none;
+  border-radius: 0.25rem;
+}
+
+button.contact {
+  padding: 0.7rem 1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero {
+  padding-top: 3rem;
+}
+
+.imgcolumn {
+  flex-basis: 80%;
+  max-height: 42rem;
+}
+
+.imghero {
+  position: relative;
+}
+
+.picoverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(66, 66, 66, 0.33);
+}
+
+img {
+  width: 100%;
+}
+
+.overlaytext {
+  position: relative;
+  bottom: 35rem;
+  left: 5rem;
+  margin-right: 35rem;
+  color: white;
+}
+
+h1 {
+  font-family: 'Tiempos Headline', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+button.getstarted {
+  font-size: 1.2rem;
+  padding: 0.8rem 2.5rem;
+}
+
+p#picturetext {
+  line-height: 2;
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.clincian {
+  background-color: #fafafa;
+  flex-basis: 100%;
+  padding: 3rem 0;
+  display: flex;
+}
+
+.full {
+  text-align: center;
+  flex-basis: 35%;
+  color: #6e6e6e;
+}
+
+.emptypartial {
+  flex-basis: calc(65% / 2);
+}
+
+.half {
+  flex-basis: 32%;
+  text-align: center;
+  margin-top: 3rem;
+  line-height: 2;
+  color: #6e6e6e;
+}
+
+h2 {
+  font-family: 'Tiempos Headline', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+p#physician {
+  font-size: 0.9rem;
+}
+
+.ready {
+  justify-content: space-around;
+  padding: 1rem 0;
+  gap: 12rem;
+}
+
+.readycolumn {
+  flex-basis: 30%;
+  color: #6e6e6e;
+}
+
+.bottombutton {
+  padding-top: 2rem;
+}
+
+.bottom {
+  background-color: #525351;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.logoandinfo {
+  flex-basis: 15%;
+}
+
+.imgbottomlogo {
+  width: 70%;
+}
+
+p#address {
+  color: white;
+  line-height: 1.5;
+  padding-top: 1.5rem;
+}
+
+.space {
+  flex-basis: 23%;
+}
+
+.company,
+.product {
+  flex-basis: 20%;
+  color: white;
+}
+
+button.white {
+  color: white;
+  background-color: #525351;
+  border-style: none;
+  padding-left: 0;
+  padding-bottom: 1rem;
+}
+
+h3.upper {
+  text-transform: uppercase;
+}
+
+.end {
+  justify-content: flex-start;
+}
+
+.endcolumn1 {
+  padding-left: 10rem;
+}
+
+.endcolumn2 {
+  padding-left: 3rem;
+}
