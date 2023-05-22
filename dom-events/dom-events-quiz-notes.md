@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   To execute specific code/functions when certain events occur. Gives functionality to elements.
 
 - Are all possible parameters required to use a JavaScript method or function?
-  Yes, otherwise the function won't have the necessary information to work.
+  No they are not all required.
 
 - What method of element objects lets you set up a function to be called when a specific type of event occurs?
   The .addEventListener method allows functionality for events.
@@ -27,11 +27,11 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - What is the difference between these two snippets of code?
   `js
-    element.addEventListener('click', handleClick)
-    `
+  element.addEventListener('click', handleClick)
+  `
   `js
-    element.addEventListener('click', handleClick())
-    `
+  element.addEventListener('click', handleClick())
+  `
   The first one will work as intended and the second one will execute the function handleClick() when it is read instead of when the event occurs.
 
 ## Notes
