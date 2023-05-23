@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100%;
+  height: 600px;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+.modalOff {
+  display: none;
+}
+
+.modalOn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: white;
+  border-radius: 6px;
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.space {
+  padding: 20px;
+}
+
+.close {
+  background-color: #eb5d5d;
+  padding: 15px 50px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  border-style: none;
+  box-shadow: 2px 3px 10px black;
+}
+
+.open {
+  font-size: 30px;
+  padding: 10px 30px;
+  border-radius: 6px;
+  border-style: none;
+  background-color: rgb(17, 70, 127);
+  color: white;
+}
+
+.backdropOn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.544);
+}
