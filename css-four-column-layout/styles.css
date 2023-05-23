@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  font-family: Barlow, sans-serif;
+}
+
+#container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.full {
+  flex-basis: 100%;
+}
+
+.fourthColumn {
+  flex-basis: 25%;
+}
+
+.icon {
+  width: 30%;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+
+p {
+  padding-top: 6%;
+}
