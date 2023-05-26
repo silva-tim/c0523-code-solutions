@@ -8,7 +8,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   The element in which the event occurred on.
 
 - What is the affect of setting an element to `display: none`?
-  It hides the element from being seen.
+  It hides the element from being seen and removes it from the flow.
 
 - What does the `element.matches()` method take as an argument and what does it return?
   It takes any valid CSS selector as its argument and it returns true or false if the element its applied to matches the argument.
@@ -17,7 +17,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   By using the element.getAttribute('attribute') method.
 
 - At what steps of the solution would it be helpful to log things to the console?
-  Inside the conditional statements/loops to see if the parts of our code we expect to run given certain circumstances actually run during those circumstances.
+  At all steps of the solution.
 
 - If you were to add another tab and view to your HTML, but you didn't use event delegation, how would your JavaScript code be written instead?
   I would have to query for the new tab and setup a new event listener to call the function to switch pages.
