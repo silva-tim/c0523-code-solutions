@@ -4,8 +4,8 @@ function getRangeReport(start, end) {
     odds: [],
     evens: [],
     range: [],
-    average: 0
-  }
+    average: 0,
+  };
 
   let tempNum = 0;
 
@@ -16,11 +16,13 @@ function getRangeReport(start, end) {
     if (i % 2 === 0) {
       properties.evens.push(i);
     } else {
-      properties.odds.push(i)
+      properties.odds.push(i);
     }
   }
 
   properties.total = tempNum;
-  properties.average = tempNum / (properties.range.length);
+  properties.average = tempNum / properties.range.length;
   return properties;
 }
+
+getRangeReport();
