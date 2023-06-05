@@ -8,7 +8,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   A function that is passed as an argument to another function.
 
 - Besides adding an event listener callback function to an element or the `document`, what is one way to delay the execution of a JavaScript function until some point in the future?
-  Using the global method setTimeout() you can delay a JavaScriot function.
+  Using the global method setTimeout() you can delay a JavaScript function.
 
 - How can you set up a function to be called repeatedly without using a loop?
   By using a setInterval() function.
