@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.column-middle {
+  flex-basis: 40%;
+}
+
+.column-side {
+  font-size: 40px;
+}
+
+.column-dot {
+  font-size: 20px;
+  letter-spacing: 10px;
+}
+
+.justifycenter {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.justifyaround {
+  display: flex;
+  justify-content: space-around;
+}
+
+.aligncenter {
+  display: flex;
+  align-items: center;
+}
