@@ -11,19 +11,13 @@ const doubled = numbers.map((n) => n * 2);
 console.log('doubled', doubled);
 
 console.log('\n\nExercise 2');
-const actOnEntries = (obj, action) => {
-  Object.entries(obj).forEach((e) => {
-    action(e);
-  });
-};
-actOnEntries(book, (entry) => {
-  console.log(`${entry[0]} = ${entry[1]}`);
-});
+function actOnEntries(obj, action) {
+  Object.entries(obj).forEach((e) => action(e));
+}
+actOnEntries(book, (entry) => console.log(`${entry[0]} = ${entry[1]}`));
 
 console.log('\n\nExercise 3');
-const foo = () => {
-  console.log("Why doesn't this log???");
-};
+const foo = () => console.log("Why doesn't this log???");
 console.log('foo type:', typeof foo);
 
 console.log('\n\nExercise 4');

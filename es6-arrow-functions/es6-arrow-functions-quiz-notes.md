@@ -8,7 +8,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   (parameters) => {code};
 
 - When an arrow function's body is not surrounded in curly braces (_concise body syntax_), what changes in its functionality?
-  If the functions body does not have an expression and rather is a statement/statements then the function will not work, otherwise if the function is an expression it will work when the return keyword is removed.
+  It will not require a return statement.
 
 - When using _concise body syntax_, how do you return an object literal?
   You wrap the object literal/curly brackets in parenthesis otherwise the JavaScript engine won't be able to distinguish the object from a code block.
@@ -58,7 +58,7 @@ After completing this exercise, you should be able to discuss or answer the foll
     A callback arrow function is the type of argument passed to the function `bar`.
 
   - When does the arrow function's code get executed?
-    When the bar function calls it.
+    When bar is called.
 
 - How does the value of `this` differ between standard functions and arrow functions?
   The `this` value for a standard function is defined by itself but in an arrow function the `this` value is defined by the context in which the arrow function is in.
