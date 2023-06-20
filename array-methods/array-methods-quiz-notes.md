@@ -21,7 +21,7 @@ After completing this exercise, you should be able to discuss or answer the foll
     It cycles through every element in an array and executes a function on each element. It then adds the result to a new array.
 
   - What should the callback function return?
-    A new array with all the values of the argument array changed according to the callback function.
+    A new transformed version of the original variable.
 
   - What is `Array.map` useful for?
     Because it doesn't affect the original array, array map is useful for cases where you need to execute specific code on every element in an array and also need to keep the original array intact.
@@ -32,7 +32,7 @@ After completing this exercise, you should be able to discuss or answer the foll
     It cycles through every element in an array and checks to see if it passes a function test. If the element passes the test provided in the callback function then the element is added to a new array.
 
   - What should the callback function return?
-    It returns a shallow copy of the original array containing all elements that passed the test.
+    A true or false statement indicating whether or not the variable passed the test.
 
   - What is `Array.filter` useful for?
     It is useful for finding all elements in an array that match a specific requirement.
