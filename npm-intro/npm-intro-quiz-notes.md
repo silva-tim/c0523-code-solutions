@@ -8,7 +8,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   NPM is a package manager that allows users to download or publish packages for a coding project.
 
 - What is a package?
-  A package is a small bit of code that does one thing very well.
+  A reusable piece of code or software that can be used in projects.
 
 - What are some other popular package managers?
   Yarn and PNPM.
@@ -17,7 +17,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   npm init --yes
 
 - What is a dependency and how do you add one to a package?
-  They are packages that are requires for an application to run and you add one using the npm install command.
+  They are packages that are required for an application to run and you add one using the npm install command.
 
 - What happens when you add a dependency to a package with `npm`?
   It gets added to the dependency property in the package.json object.
