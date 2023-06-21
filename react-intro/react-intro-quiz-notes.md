@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is React?
-  React is a front-end JavaScript framework that makes website building easier.
+  React is a front-end JavaScript library/framework that makes website building easier.
 
 - What is a React component?
   A react component is a piece of the UI that has its own logic and appearance.
