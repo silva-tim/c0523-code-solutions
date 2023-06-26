@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   You write it similar to HTML and it creates the actual HTML that matches what you want in your component.
 
 - How do you declare the props a React component needs?
-  You declare them in the parent function of the component as 'attributes' in the component's JSX.
+  You declare them in the parameters part of the component definition.
 
 - How do you pass props to a React component?
   You pass them by adding the name of the prop and the value to the component in the parent.
@@ -20,16 +20,16 @@ After completing this exercise, you should be able to discuss or answer the foll
   You can 'break into' JavaScript by adding curly braces.
 
 - What are React hooks and what are the three "Rules of Hooks"?
-  React hooks are functions that start with use and allow the use of several React features without creating classes. The rules are: always define hooks at the top of your component, only define hooks in components or other hooks and hooks cannot be conditional.
+  React hooks are functions that start with use and allow the use of several React features without creating classes. The rules are: always define hooks at the top of your component with the use keyword, only define hooks in components or other hooks and hooks cannot be conditional so they must always run.
 
 - How do you manage state in a React component?
-  By using the use state hook.
+  By using the use state hook to set and update the value of state.
 
 - How do you handle events in React?
   You can either create the event handler in the component or in the parent and pass the function down as a prop.
 
 - How do you let a parent component know that an event happened?
-  Events will bubble/propagate up so you don't need to let the parent component know that it happened.
+  By passing the event into the component as a prop.
 
 ## Notes
 
