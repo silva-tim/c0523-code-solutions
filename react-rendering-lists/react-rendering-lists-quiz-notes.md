@@ -5,13 +5,13 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - When would we want to dynamically create a list of React components?
-  If the component is going to be dynamically changed, either sorted or filtered or the data being different.
+  When you have a collection of data that you want to show.
 
 - Why is it important for React components to be data-driven?
-  So they can be easily reused with new data instead of having to recreate the same thing several times.
+  So they can be easily reused with new data instead of having to recreate the same thing several times. Easy to change things when the data changes.
 
 - Where in the component code would a list of React components typically be built?
-  Outside of the return function.
+  Inside of the JSX portion of the component.
 
 - What `Array` method is commonly used to create a list of React components?
   The map() array method is used.
