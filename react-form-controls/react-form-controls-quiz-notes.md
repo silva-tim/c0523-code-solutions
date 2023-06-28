@@ -8,10 +8,10 @@ After completing this exercise, you should be able to discuss or answer the foll
   They use state to store the changes to the variable instead of changing the variable on the DOM and retrieving the info from the DOM.
 
 - What are some advantages of using uncontrolled components?
-  Don't have to use state, JSX is a bit cleaner.
+  Don't have to use state, JSX is a bit cleaner, easier to implement.
 
 - What are some advantages of using controlled components?
-  Use state which can be helpful, also don't have to get the inputs from the DOM and instead can retrieve it through state.
+  Use state which can be helpful, also don't have to get the inputs from the DOM and instead can retrieve it through state. All the logic is in React so you don't have to manually change the DOM.
 
 - Which style do you prefer?
   I think I prefer the controlled way because its a bit more clean and makes more sense than the uncontrolled way.
