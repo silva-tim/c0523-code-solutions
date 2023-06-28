@@ -1,0 +1,20 @@
+.form-control {
+  width: 20%;
+  display: inline-block;
+}
+
+.form-control.is-invalid {
+  background-image: none;
+}
+
+.form-control.is-valid {
+  background-image: none;
+}
+
+.fa-x {
+  color: red;
+}
+
+.fa-check {
+  color: green;
+}
