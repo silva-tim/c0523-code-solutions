@@ -36,11 +36,19 @@ function Banner({ item }) {
 }
 
 function NextButton({ onNext }) {
-  return <button onClick={onNext}>Next</button>;
+  return (
+    <button type="button" onClick={onNext}>
+      Next
+    </button>
+  );
 }
 
 function PrevButton({ onPrev }) {
-  return <button onClick={onPrev}>Prev</button>;
+  return (
+    <button type="button" onClick={onPrev}>
+      Prev
+    </button>
+  );
 }
 
 function Indicators({ onIndicate, count, currentIndex }) {
@@ -49,13 +57,13 @@ function Indicators({ onIndicate, count, currentIndex }) {
   for (let i = 0; i < count; i++) {
     if (i === currentIndex) {
       buttons.push(
-        <button className="current" key={i}>
+        <button type="button" className="current" key={i}>
           {i}
         </button>
       );
     } else {
       buttons.push(
-        <button onClick={() => onIndicate(i)} key={i}>
+        <button type="button" onClick={() => onIndicate(i)} key={i}>
           {i}
         </button>
       );
