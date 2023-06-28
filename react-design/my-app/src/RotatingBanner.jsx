@@ -4,12 +4,29 @@ import './RotatingBanner.css';
 export default function RotatingBanner({ items }) {
   const [index, setIndex] = useState(0);
 
+  function handleNext() {
+    setIndex((index + 1) % items.length);
+  }
+
+  function handlePrev() {
+    setIndex((index - 1 + items.length) % items.length);
+  }
+
+  function handleIndicate(currentIndex) {
+    console.log(2);
+    setIndex(currentIndex);
+  }
+
   return (
     <div>
       <Banner item={items[index]} />
-      <PrevButton />
-      <Indicators currentIndex={index} count={items.length} />
-      <NextButton />
+      <PrevButton onPrev={handlePrev} />
+      <Indicators
+        onIndicate={handleIndicate}
+        currentIndex={index}
+        count={items.length}
+      />
+      <NextButton onNext={handleNext} />
     </div>
   );
 }
@@ -18,15 +35,15 @@ function Banner({ item }) {
   return <h2>{item}</h2>;
 }
 
-function NextButton() {
-  return <button>Next</button>;
+function NextButton({ onNext }) {
+  return <button onClick={onNext}>Next</button>;
 }
 
-function PrevButton() {
-  return <button>Prev</button>;
+function PrevButton({ onPrev }) {
+  return <button onClick={onPrev}>Prev</button>;
 }
 
-function Indicators({ count, currentIndex }) {
+function Indicators({ onIndicate, count, currentIndex }) {
   const buttons = [];
 
   for (let i = 0; i < count; i++) {
@@ -37,7 +54,11 @@ function Indicators({ count, currentIndex }) {
         </button>
       );
     } else {
-      buttons.push(<button key={i}>{i}</button>);
+      buttons.push(
+        <button onClick={() => onIndicate(i)} key={i}>
+          {i}
+        </button>
+      );
     }
   }
   return <div>{buttons}</div>;
