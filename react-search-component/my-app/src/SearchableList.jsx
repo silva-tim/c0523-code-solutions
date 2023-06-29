@@ -1,5 +1,6 @@
 import './SearchableList.css';
 import { useState } from 'react';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 export default function SearchableList({ list }) {
   const [value, setValue] = useState('');
@@ -18,6 +19,7 @@ export default function SearchableList({ list }) {
 
   return (
     <div>
+      <FaMagnifyingGlass className="icon" />
       <SearchBar onCustomChange={(e) => setValue(e.target.value)} />
       <ItemList listToRender={currentRender} />
     </div>
