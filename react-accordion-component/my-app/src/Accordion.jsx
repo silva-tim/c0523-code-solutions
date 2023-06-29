@@ -4,11 +4,11 @@ import { useState } from 'react';
 export default function Accordion({ listOfTopics }) {
   const [current, setCurrent] = useState('');
 
-  function handleCustomClick(e) {
-    if (e.target.textContent === current) {
+  function handleCustomClick(clickedButton) {
+    if (clickedButton === current) {
       setCurrent('');
     } else {
-      setCurrent(e.target.textContent);
+      setCurrent(clickedButton);
     }
   }
 
@@ -30,7 +30,9 @@ export default function Accordion({ listOfTopics }) {
 function Topic({ item, onCustomClick, currentClicked }) {
   return (
     <div>
-      <button onClick={onCustomClick} type="button">
+      <button
+        onClick={(e) => onCustomClick(e.target.textContent)}
+        type="button">
         {item.title}
       </button>
       <p className={currentClicked === item.title ? '' : 'hidden'}>
