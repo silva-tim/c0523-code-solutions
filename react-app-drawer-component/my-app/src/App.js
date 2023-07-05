@@ -1,6 +1,7 @@
 import { FaBars } from 'react-icons/fa';
 import './App.css';
 import AppDrawer from './AppDrawer';
+import { useState } from 'react';
 
 const menuList = [
   { title: 'About' },
@@ -9,10 +10,24 @@ const menuList = [
 ];
 
 function App() {
+  const [drawerShown, setDrawerShown] = useState('closed');
+  function handleOpen() {
+    setDrawerShown('open');
+  }
+
+  function handleClose(e) {
+    console.log(1);
+    setDrawerShown('closed');
+  }
+
   return (
     <div>
-      <FaBars />
-      <AppDrawer list={menuList} />
+      <FaBars className="icon" onClick={handleOpen} />
+      <AppDrawer
+        drawerStatus={drawerShown}
+        onClose={handleClose}
+        list={menuList}
+      />
     </div>
   );
 }
