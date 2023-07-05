@@ -16,7 +16,6 @@ function App() {
   }
 
   function handleClose(e) {
-    console.log(1);
     setDrawerShown('closed');
   }
 
