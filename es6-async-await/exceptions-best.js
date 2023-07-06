@@ -39,9 +39,9 @@ async function throwChained() {
 }
 
 try {
-  throwOnce()
-    .then(() => throwSeveral())
-    .then(() => throwChained());
+  await throwOnce();
+  await throwSeveral();
+  await throwChained();
 } catch (error) {
   console.log(elapsed(), 'Oops', error);
 }

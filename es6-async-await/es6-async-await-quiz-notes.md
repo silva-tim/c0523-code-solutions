@@ -14,16 +14,16 @@ After completing this exercise, you should be able to discuss or answer the foll
   At the beginning of a function that you want to have asynchronous capabilities. Might be used for fetching from an api.
 
 - When do you use `await`? When do you _not_ use `await`? (What happens if you `await` a synchronous function?)
-  You use await before an asynchronous action is going to take place inside of a async function. You can't use await outside of async functions. If you use them in synchronous functions you will get an error.
+  You use await before a promise that you want to wait for. You can't use await outside of async functions. If you use them in synchronous functions you will get an error.
 
 - How do you handle errors with `await`?
   Using try{}catch{} you can easily handle errors for await.
 
 - What do `try`, `catch` and `throw` do? When do you use them?
-  Try will run some code and if an exception is thrown then the code in the catch section will run. Throw is to throw a user defined exception.
+  Try will run some code and if an exception is thrown then the code in the catch section will run. Throw is to throw a user defined exception and it will halt execution of the current scope. Anytime you are doing error handling.
 
 - What happens if you forget to use `await` on a Promise? In that case, what happens to the Promise rejection?
-  Then whatever variable you set to be the await will not be a response but instead will be the promise. The promise rejection will not be handled properly because no exception will be thrown.
+  The promise rejection will be lost and won't be able to be used.
 
 - Which style of asynchronous programming do you prefer — callbacks, `Promise.then`, or `async/await`? Why?
   Async/await because it makes the most sense to me and is very simple to use.

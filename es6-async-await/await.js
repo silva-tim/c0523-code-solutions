@@ -32,6 +32,6 @@ async function fetchChained() {
   console.log(elapsed(), 'fetchSeveral3:', responseChained3);
 }
 
-fetchOnce()
-  .then(() => fetchSeveral())
-  .then(() => fetchChained());
+await fetchOnce();
+await fetchSeveral();
+await fetchChained();
