@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+}
+
+.icon {
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+h1 {
+  flex-basis: 50%;
+  text-align: right;
+}
