@@ -17,9 +17,9 @@ try {
       createNote(data, arg1);
       break;
     case 'delete':
-      if (arg1 === undefined) {
+      if (!data.notes[arg1]) {
         throw new Error(
-          `'${action}' command must include a note id to delete!`
+          `'${action}' command must include a valid note id to delete!`
         );
       }
       deleteNote(data, arg1);
@@ -48,22 +48,24 @@ function readNotes(data) {
   }
 }
 
-async function createNote(data, text) {
+function createNote(data, text) {
   const id = data.nextId;
-  data.notes[`${id}`] = `${text}`;
+  data.notes[id] = text;
   data.nextId++;
-  const newData = JSON.stringify(data, null, 2);
-  await writeFile('data.json', newData);
+  rewriteFile(data);
 }
 
-async function deleteNote(data, noteId) {
+function deleteNote(data, noteId) {
   delete data.notes[noteId];
-  const newData = JSON.stringify(data, null, 2);
-  await writeFile('data.json', newData);
+  rewriteFile(data);
 }
 
-async function updateNote(data, noteId, text) {
+function updateNote(data, noteId, text) {
   data.notes[noteId] = text;
+  rewriteFile(data);
+}
+
+async function rewriteFile(data) {
   const newData = JSON.stringify(data, null, 2);
   await writeFile('data.json', newData);
 }
