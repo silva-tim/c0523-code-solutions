@@ -48,21 +48,21 @@ function readNotes(data) {
   }
 }
 
-function createNote(data, text) {
+async function createNote(data, text) {
   const id = data.nextId;
   data.notes[id] = text;
   data.nextId++;
-  rewriteFile(data);
+  await rewriteFile(data);
 }
 
-function deleteNote(data, noteId) {
+async function deleteNote(data, noteId) {
   delete data.notes[noteId];
-  rewriteFile(data);
+  await rewriteFile(data);
 }
 
-function updateNote(data, noteId, text) {
+async function updateNote(data, noteId, text) {
   data.notes[noteId] = text;
-  rewriteFile(data);
+  await rewriteFile(data);
 }
 
 async function rewriteFile(data) {
