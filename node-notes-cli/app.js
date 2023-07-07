@@ -29,6 +29,8 @@ try {
         throw new Error(
           `'${action}' command must include a note id to update and a note to update it with!`
         );
+      } else if (!data.notes[arg1]) {
+        throw new Error(`'${arg1}' is not a valid note id!`);
       }
       updateNote(data, arg1, arg2);
       break;
