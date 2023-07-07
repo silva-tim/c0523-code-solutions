@@ -1,10 +1,9 @@
 import './AppDrawer.css';
 
 export default function AppDrawer({ drawerStatus, onClose, list }) {
-  const menuBarLinks = [];
-  for (let i = 0; i < list.length; i++) {
-    menuBarLinks.push(<MenuItem onClose={onClose} item={list[i]} />);
-  }
+  const menuBarLinks = list.map((element) => (
+    <MenuItem onClose={(item) => onClose(item)} item={element} />
+  ));
 
   return (
     <div className={`${drawerStatus === 'open' ? '' : 'hidden'}`}>
@@ -22,5 +21,9 @@ function Heading() {
 }
 
 function MenuItem({ onClose, item }) {
-  return <button onClick={onClose}>{item.title}</button>;
+  return (
+    <button type="button" onClick={() => onClose(item)}>
+      {item.title}
+    </button>
+  );
 }

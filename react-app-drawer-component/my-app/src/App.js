@@ -11,20 +11,25 @@ const menuList = [
 
 function App() {
   const [drawerShown, setDrawerShown] = useState('closed');
+  const [currentPage, setCurrentPage] = useState('About');
   function handleOpen() {
     setDrawerShown('open');
   }
 
-  function handleClose(e) {
+  function handleClose(item) {
+    setCurrentPage(`${item.title}`);
     setDrawerShown('closed');
   }
 
   return (
     <div>
-      <FaBars className="icon" onClick={handleOpen} />
+      <div className="row">
+        <FaBars className="icon" onClick={handleOpen} />
+        <h1>{currentPage}</h1>
+      </div>
       <AppDrawer
         drawerStatus={drawerShown}
-        onClose={handleClose}
+        onClose={(item) => handleClose(item)}
         list={menuList}
       />
     </div>
