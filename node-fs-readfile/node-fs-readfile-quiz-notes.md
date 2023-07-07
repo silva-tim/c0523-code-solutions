@@ -8,7 +8,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   A folder of files or other directories that helps organize the things on a computer.
 
 - What is a relative file path?
-  A path file that starts from the current file and goes from there. Starts with ./ or ../ and travels to the destination file starting at the current file.
+  A path to a file that starts from the current directory(current working directory) and goes from there. Anything that doesn't start with /
 
 - What is an absolute file path?
   An absolute path file is a path file that starts at the root of all the paths. It doesn't care where the current file is.
