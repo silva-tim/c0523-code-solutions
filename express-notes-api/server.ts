@@ -79,6 +79,7 @@ app.post('/api/notes', async (req, res) => {
   }
 });
 
+// Removes a note based on the id of the note
 app.delete('/api/notes/:id', async (req, res) => {
   try {
     await readJSON();
@@ -101,6 +102,7 @@ app.delete('/api/notes/:id', async (req, res) => {
   }
 });
 
+// Amends a pre-exisiting note with a new content field
 app.put('/api/notes/:id', async (req, res) => {
   try {
     await readJSON();
