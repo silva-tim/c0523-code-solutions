@@ -11,14 +11,6 @@ type Data = {
   notes: Record<number, Note>;
 };
 
-type Err = {
-  error: string;
-};
-
-const error: Err = {
-  error: 'An error occured.',
-};
-
 const app = express();
 app.use(express.json());
 
@@ -33,8 +25,7 @@ app.get('/api/notes', async (req, res) => {
     res.status(200).json(notesList);
   } catch (err) {
     console.error(err);
-    error.error = 'An unexpected error occurred.';
-    res.status(500).json(error);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 
@@ -44,20 +35,19 @@ app.get('/api/notes/:id', async (req, res) => {
     const data = await readJSON();
     const id = Number(req.params.id);
     if (isNaN(id) || id < 1 || !Number.isInteger(id)) {
-      error.error = `${req.params.id} is not a valid id number.`;
-      res.status(400).json(error);
+      res
+        .status(400)
+        .json({ error: `${req.params.id} is not a valid id number.` });
       return;
     }
     if (!data.notes[id]) {
-      error.error = `Note with ID ${id} does not exist.`;
-      res.status(404).json(error);
+      res.status(404).json({ error: `Note with ID ${id} does not exist.` });
       return;
     }
     res.status(200).json(data.notes[id]);
   } catch (err) {
     console.error(err);
-    error.error = 'An unexpected error occurred.';
-    res.status(500).json(error);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 
@@ -66,8 +56,7 @@ app.post('/api/notes', async (req, res) => {
   try {
     const data = await readJSON();
     if (!req.body.content) {
-      error.error = 'Must include content property.';
-      res.status(400).json(error);
+      res.status(400).json({ error: 'Must include content property.' });
       return;
     }
     const id = data.nextId++;
@@ -79,8 +68,7 @@ app.post('/api/notes', async (req, res) => {
     res.status(201).json(data.notes[id]);
   } catch (err) {
     console.error(err);
-    error.error = 'An unexpected error occurred.';
-    res.status(500).json(error);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 
@@ -90,13 +78,11 @@ app.delete('/api/notes/:id', async (req, res) => {
     const data = await readJSON();
     const id = Number(req.params.id);
     if (isNaN(id) || id < 1 || !Number.isInteger(id)) {
-      error.error = `${id} is not a valid id number.`;
-      res.status(400).json(error);
+      res.status(400).json({ error: `${id} is not a valid id number.` });
       return;
     }
     if (!data.notes[id]) {
-      error.error = `Note with ID ${id} does not exist.`;
-      res.status(404).json(error);
+      res.status(404).json({ error: `Note with ID ${id} does not exist.` });
       return;
     }
     delete data.notes[id];
@@ -104,8 +90,7 @@ app.delete('/api/notes/:id', async (req, res) => {
     res.sendStatus(204);
   } catch (err) {
     console.error(err);
-    error.error = 'An unexpected error occurred.';
-    res.status(500).json(error);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 
@@ -115,13 +100,15 @@ app.put('/api/notes/:id', async (req, res) => {
     const data = await readJSON();
     const id = Number(req.params.id);
     if (isNaN(id) || id < 1 || !Number.isInteger(id) || !req.body.content) {
-      error.error = `${id} must be a valid number and content field must be included.`;
-      res.status(400).json(error);
+      res
+        .status(400)
+        .json({
+          error: `${id} must be a valid number and content field must be included.`,
+        });
       return;
     }
     if (!data.notes[id]) {
-      error.error = `Note with ID ${id} does not exist.`;
-      res.status(404).json(error);
+      res.status(404).json({ error: `Note with ID ${id} does not exist.` });
       return;
     }
     data.notes[id] = {
@@ -132,8 +119,7 @@ app.put('/api/notes/:id', async (req, res) => {
     res.status(200).json(data.notes[id]);
   } catch (err) {
     console.error(err);
-    error.error = 'An unexpected error occurred.';
-    res.status(500).json(error);
+    res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 });
 
@@ -141,9 +127,8 @@ app.listen(8080, () => {
   console.log('Express server listening on port 8080.');
 });
 
-async function readJSON() {
-  const data: Data = JSON.parse(await readFile('data.json', 'utf8'));
-  return data;
+async function readJSON(): Promise<Data> {
+  return JSON.parse(await readFile('data.json', 'utf8'));
 }
 
 async function writeJSON(data: Data) {
