@@ -1,15 +1,13 @@
 import express from 'express';
 
-interface Student {
+type Student = {
   id: number;
   name: string;
   course: string;
   score: number;
-}
+};
 
-interface Students {
-  [key: number]: Student;
-}
+type Students = Record<number, Student>;
 
 const grades: Students = {
   12: {
@@ -43,11 +41,11 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.delete('/api/grades/:id', (req, res) => {
-  for (const key in grades) {
-    if (grades[key].id === Number(req.params.id)) {
-      delete grades[key];
-      res.sendStatus(204);
-    }
+  if (grades[Number(req.params.id)]) {
+    delete grades[Number(req.params.id)];
+    res.sendStatus(204);
+  } else {
+    res.sendStatus(404);
   }
 });
 
