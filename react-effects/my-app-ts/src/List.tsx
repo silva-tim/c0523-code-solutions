@@ -18,8 +18,9 @@ export default function List() {
         setItems(response);
       } catch (err) {
         setError(err);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     }
     fetchData();
   }, []);
