@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a database schema?
-  A collection of tables.
+  A description of the data in a database.
 
 - What is a table?
   A list of rows each having the same set of attributes.
