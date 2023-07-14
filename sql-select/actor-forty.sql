@@ -1,3 +1,3 @@
 SELECT *
   FROM "actors"
- WHERE "actorId" = '40';
+ WHERE "actorId" = 40;
