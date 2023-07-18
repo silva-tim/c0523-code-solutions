@@ -1,0 +1,22 @@
+.btn {
+  width: 7rem;
+}
+
+.spinner {
+  animation: rotate 1s infinite linear;
+}
+
+button.loading:disabled {
+  background-color: gray;
+  border: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

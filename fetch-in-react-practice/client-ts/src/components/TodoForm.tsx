@@ -1,10 +1,13 @@
 import { FormEvent, useState } from 'react';
 import { UnsavedTodo } from './Todos';
+import './TodoForm.css';
+import { FaSpinner } from 'react-icons/fa';
 
 type Props = {
+  isLoading: boolean;
   onSubmit: (todo: UnsavedTodo) => void;
 };
-export default function TodoForm({ onSubmit }: Props) {
+export default function TodoForm({ onSubmit, isLoading }: Props) {
   // Note: Use a controlled form so we can easily reset it after submit.
   const [task, setTask] = useState('');
 
@@ -19,7 +22,9 @@ export default function TodoForm({ onSubmit }: Props) {
   }
 
   return (
-    <form className="input-group mb-4 shadow-sm" onSubmit={handleSubmit}>
+    <form
+      className="input-group mb-4 shadow-sm"
+      onSubmit={isLoading ? undefined : handleSubmit}>
       <input
         required
         autoFocus
@@ -30,9 +35,15 @@ export default function TodoForm({ onSubmit }: Props) {
         placeholder="What to do?"
       />
       <div className="input-group-append">
-        <button type="submit" className="btn btn-primary">
-          Add Todo
-        </button>
+        {isLoading ? (
+          <button type="submit" className="btn btn-primary loading" disabled>
+            <FaSpinner className="spinner" />
+          </button>
+        ) : (
+          <button type="submit" className="btn btn-primary">
+            Add Todo
+          </button>
+        )}
       </div>
     </form>
   );

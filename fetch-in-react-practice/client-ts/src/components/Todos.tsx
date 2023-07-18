@@ -37,8 +37,9 @@ export default function Todos() {
   }, []);
 
   /* Implement addTodo to add a new todo. Hints are at the bottom of the file. */
-  async function addTodo(newTodo: UnsavedTodo) {
+  async function addTodo(newTodo: UnsavedTodo): Promise<void> {
     try {
+      setIsLoading(true);
       const options = {
         method: 'POST',
         headers: {
@@ -60,12 +61,13 @@ export default function Todos() {
   }
 
   /* Implement toggleCompleted to toggle the completed state of a todo. Hints are at the bottom of the file. */
-  async function toggleCompleted(todoId: number) {
+  async function toggleCompleted(todoId: number): Promise<void> {
     const index = todos.findIndex((current) => current.todoId === todoId);
     const newStatus = {
       isCompleted: !todos[index].isCompleted,
     };
     try {
+      setIsLoading(true);
       const options = {
         method: 'PATCH',
         headers: {
@@ -89,7 +91,7 @@ export default function Todos() {
     }
   }
 
-  if (isLoading) {
+  if (isLoading && todos[0] === undefined) {
     return <div>Loading...</div>;
   }
   if (error) {
@@ -105,7 +107,7 @@ export default function Todos() {
       <div className="row">
         <div className="col pt-5">
           <PageTitle text="Todo App" />
-          <TodoForm onSubmit={addTodo} />
+          <TodoForm isLoading={isLoading} onSubmit={addTodo} />
           <TodoList todos={todos} toggleCompleted={toggleCompleted} />
         </div>
       </div>
