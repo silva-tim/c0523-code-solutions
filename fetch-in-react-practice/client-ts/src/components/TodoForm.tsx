@@ -22,9 +22,7 @@ export default function TodoForm({ onSubmit, isLoading }: Props) {
   }
 
   return (
-    <form
-      className="input-group mb-4 shadow-sm"
-      onSubmit={isLoading ? undefined : handleSubmit}>
+    <form className="input-group mb-4 shadow-sm" onSubmit={handleSubmit}>
       <input
         required
         autoFocus
