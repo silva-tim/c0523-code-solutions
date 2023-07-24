@@ -15,9 +15,7 @@ export function toDollars(amount) {
   if (Number.isInteger(amount)) {
     return `$${amount}.00`;
   } else {
-    const num = `${Math.floor(amount * 100)}`;
-    const dec = num.slice(-2);
-    return `$${num.slice(0, -2) + '.' + dec}`;
+    return `$${amount.toFixed(2)}`;
   }
 }
 
@@ -29,10 +27,7 @@ export function toDollars(amount) {
  * @returns a new array.
  */
 export function divideBy(numbers, divisor) {
-  for (let i = 0; i < numbers.length; i++) {
-    numbers[i] = numbers[i] / divisor;
-  }
-  return numbers;
+  return numbers.map((i) => i / divisor);
 }
 
 /**
@@ -43,11 +38,10 @@ export function divideBy(numbers, divisor) {
  * @returns the input object.
  */
 export function multiplyBy(obj, multiplier) {
-  const result = { ...obj };
-  for (const key in result) {
-    if (typeof result[key] === 'number') {
-      result[key] = result[key] * multiplier;
+  for (const key in obj) {
+    if (typeof obj[key] === 'number') {
+      obj[key] = obj[key] * multiplier;
     }
   }
-  return result;
+  return obj;
 }
